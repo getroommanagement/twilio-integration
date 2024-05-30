@@ -7,6 +7,7 @@
  "field_order": [
   "account_sid",
   "enabled",
+  "base_url",
   "column_break_3",
   "auth_token",
   "record_calls",
@@ -103,12 +104,17 @@
    "fieldtype": "Small Text",
    "label": "Reply Message",
    "mandatory_depends_on": "whatsapp_no"
+  },
+  {
+   "fieldname": "base_url",
+   "fieldtype": "Data",
+   "label": "Base URL"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2021-07-08 00:46:42.317641",
+ "modified": "2024-05-31 00:11:47.216217",
  "modified_by": "Administrator",
  "module": "Twilio Integration",
  "name": "Twilio Settings",

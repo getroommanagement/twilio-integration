@@ -134,6 +134,11 @@ def whatsapp_message_status_callback(**kwargs):
 	"""This is a webhook called by Twilio whenever sent WhatsApp message status is changed.
 	"""
 	args = frappe._dict(kwargs)
-	if frappe.db.exists({'doctype': 'WhatsApp Message', 'id': args.MessageSid, 'from_': args.From, 'to': args.To}):
-		message = frappe.get_doc('WhatsApp Message', {'id': args.MessageSid, 'from_': args.From, 'to': args.To})
+	print("kwargs: ",kwargs)
+	print("args.MessageSid: ",args.MessageSid)
+	print("args.From: ",args.From)
+	print("args.To: ",args.To)
+	if frappe.db.exists({'doctype': 'WhatsApp Message', 'id': args.MessageSid}):
+		message = frappe.get_doc('WhatsApp Message', {'id': args.MessageSid})
+		print("found message: ",message)
 		message.db_set('status', args.MessageStatus.title())

@@ -28,11 +28,13 @@ class WhatsAppMessage(Document):
 			frappe.log_error(e, title = _('Twilio WhatsApp Message Error'))
 	
 	def get_message_dict(self):
+		base_url = frappe.db.get_single_value('Twilio Settings', 'base_url')
+		status_callback_url = "{}/api/method/twilio_integration.twilio_integration.api.whatsapp_message_status_callback".format(base_url)
 		args = {
 			'from_': self.from_,
 			'to': self.to,
 			'body': self.message,
-			'status_callback': 'https://www.grgetroom.com.my/api/method/twilio_integration.twilio_integration.api.whatsapp_message_status_callback'
+			'status_callback': status_callback_url
 		}
 		if self.media_link:
 			args['media_url'] = [self.media_link]
