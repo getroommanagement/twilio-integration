@@ -15,7 +15,8 @@
   "send_on",
   "reference_doctype",
   "reference_document_name",
-  "profile_name"
+  "profile_name",
+  "cost"
  ],
  "fields": [
   {
@@ -39,7 +40,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "\nQueued\nSent\nReceived\nDelivered\nRead\nUndelivered\nError"
+   "options": "\nQueued\nSent\nReceived\nDelivered\nRead\nUndelivered\nError\nFailed"
   },
   {
    "fieldname": "reference_doctype",
@@ -82,13 +83,18 @@
    "fieldname": "profile_name",
    "fieldtype": "Data",
    "label": "Profile Name"
+  },
+  {
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "label": "Cost"
   }
  ],
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 1,
- "modified": "2021-07-08 01:09:24.002941",
+ "modified": "2024-05-30 18:46:52.141338",
  "modified_by": "Administrator",
  "module": "Twilio Integration",
  "name": "WhatsApp Message",

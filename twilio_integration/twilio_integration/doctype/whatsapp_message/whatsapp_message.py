@@ -32,7 +32,7 @@ class WhatsAppMessage(Document):
 			'from_': self.from_,
 			'to': self.to,
 			'body': self.message,
-			'status_callback': '{}/api/method/twilio_integration.twilio_integration.api.whatsapp_message_status_callback'.format(get_site_url(frappe.local.site))
+			'status_callback': 'https://www.grgetroom.com.my/api/method/twilio_integration.twilio_integration.api.whatsapp_message_status_callback'
 		}
 		if self.media_link:
 			args['media_url'] = [self.media_link]
